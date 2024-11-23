@@ -1,0 +1,9 @@
+wine box64 OverrideDlls.bat 
+cp dxvk-2.5.1/x32/*.dll ~/.wine/drive_c/windows/syswow64
+cp dxvk-2.5.1/x64/*.dll ~/.wine/drive_c/windows/system32
+
+taskset -c 3-7 box64 wine explorer /desktop=shell,1200x540 taskmgr &>/dev/null &
+
+proton
+
+WINEPREFIX=~/.wineproton taskset -c 3-7 box64 /opt/wine-proton-exp-9.0-a3a833eb4ba-exp-wow64-amd64/bin/wine explorer /desktop=shell,1200x540 taskmgr &>/dev/null &
